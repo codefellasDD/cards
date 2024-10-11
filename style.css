@@ -22,11 +22,11 @@
   --black10p: rgba(0, 0, 0, 0.1);
   --black4p: rgba(0, 0, 0, 0.04);
   --white: rgba(255, 255, 255, 1);
-  --slate100:  rgba(241,245,249,1);
-  --slate200:  rgba(226,232,240,1); 
-  --slate300:  rgba(203,213,225,1);
-  --slate400:  rgba(148,163,184,1);
-  --slate600:  rgba(71,85,105,1);
+  --slate100: rgba(241, 245, 249, 1);
+  --slate200: rgba(226, 232, 240, 1);
+  --slate300: rgba(203, 213, 225, 1);
+  --slate400: rgba(148, 163, 184, 1);
+  --slate600: rgba(71, 85, 105, 1);
   --success100: rgb(39, 195, 34);
   --success: rgba(39, 195, 34, 1);
   --success30: rgba(151, 226, 149, 1);
@@ -75,12 +75,32 @@ body {
   margin: 8px;
 }
 
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .grid {
   display: grid;
 }
 
+.gap-4 {
+  gap: 1rem;
+}
+
 .gap-1 {
   margin-bottom: 1rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
 }
 
 .max-w-6xl {
@@ -138,8 +158,7 @@ body {
   padding-bottom: 0rem;
   padding-left: 0.25rem;
   padding-right: 0.25rem;
-  box-shadow: 0 20px 25px -5px var(--black10p),
-    0 10px 10px -5px var(--black4p);
+  box-shadow: 0 20px 25px -5px var(--black10p), 0 10px 10px -5px var(--black4p);
   border-radius: 1rem;
 }
 
@@ -153,7 +172,7 @@ body {
   );
 }
 .card[data-state="warning"] {
-  background:  var(--warning100);
+  background: var(--warning100);
   background: linear-gradient(
     180deg,
     var(--warning) 0%,
@@ -360,3 +379,97 @@ video {
 img {
   border-style: solid;
 }
+
+/* SCHEDULE POPUP*/
+.popup-card {
+  max-height: 40rem;
+  height: 30rem;
+  max-width: 60rem;
+  width: 40rem;
+  overflow: hidden;
+  padding-top: 0rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  background-color: var(--white);
+  box-shadow: 0 20px 25px -5px var(--black10p), 0 10px 10px -5px var(--black4p);
+  border-radius: 1rem;
+}
+
+.popup-card-body {
+  position: relative;
+  top: 1.6rem;
+  background-color: var(--white);
+  border-radius: 1rem;
+  border: 1px solid var(--slate300);
+  box-shadow: 0 1px 3px 0 var(--black10p), 0 1px 2px -1px var(--black10p);
+  width: 100%;
+  height: 88%;
+}
+
+.popup-card-header{
+  position: relative;
+  display: flex;
+  justify-content:space-between;
+  top: 0.8rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  height: 2rem;
+}
+
+.popup-card-title-left {
+  position: relative;
+  display: flex;
+  color: var(--slate600);
+  font-family: var(--font-state);
+  font-weight: 400;
+  font-size: 16pt;
+  text-transform: uppercase;
+  height: 1.2rem;
+}
+.popup-card-select-right {
+  position: relative;
+  display: flex;
+  background-color: var(--slate100);
+  color: var(--slate600);
+  font-family: var(--font-state);
+  font-weight: 400;
+  font-size: 12pt;
+  text-transform: uppercase;
+  border-radius: .5rem;
+  width: fit-content;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: no-wrap;
+}
+
+
+.popup-card-select-right input{ display: none; }
+
+.popup-card-select-right label{
+  font-family: var(--font-state);
+  font-weight: 300;
+  color: var(--slate400);
+  font-size: 10pt;
+  border-radius: 8px;
+  margin: 2px;
+  padding: 3px 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.popup-card-select-right label:last-of-type{ border-right: 0; }
+
+.popup-card-select-right label:hover{
+  background: var(--slate200);
+}
+.popup-card-select-right input:checked + label{
+  font-family: var(--font-state);
+  font-weight: 400;
+  background: var(--white);
+  color: var(--slate600);
+  border: 1px solid var(--slate300);
+  box-shadow: 0 20px 25px -5px var(--black10p), 0 10px 10px -5px var(--black4p);
+}
+/* END SCHEDULE POPUP*/
