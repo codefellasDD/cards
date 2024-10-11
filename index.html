@@ -11,7 +11,8 @@
 
 <body class="antialiased bg-slate-200">
     <div class="max-w-6xl mx-auto">
-        <div class="flex items-center justify-center min-h-screen">
+        <div class="header">Cards</div>
+        <div class="flex center-vh">
             <!-- <div class="max-w-sm w-full sm:w-1/2 lg:w-1/3 py-6 px-3"> -->
             <div>
                 <div class="popup-card gap-1">
@@ -19,19 +20,32 @@
                         <div class="popup-card-title-left">History Work</div>
                         <div class="popup-card-select-right">
                             <!-- <nav> -->
-                                <input type="radio" id="x1" name="x"/>
-                                <label for="x1">1D</label>
-                                
-                                <input type="radio" id="x2" name="x"/>
-                                <label for="x2">7D</label>
-                                
-                                <input type="radio" id="x3" name="x" checked/>
-                                <label for="x3">1M</label>
+                            <input type="radio" id="x1" name="x" />
+                            <label for="x1">1D</label>
+
+                            <input type="radio" id="x2" name="x" />
+                            <label for="x2">7D</label>
+
+                            <input type="radio" id="x3" name="x" checked />
+                            <label for="x3">1M</label>
                             <!-- </nav> -->
                         </div>
                     </div>
                     <div class="popup-card-body">
-
+                        <div class="popup-body-header">
+                            <div class="popup-body-header-left">
+                                Schedule
+                            </div>
+                            <button class="popup-body-header-right" id="add" name="add">Add</button>
+                        </div>
+                        <div class="task">
+                            <span class="ping center-vh">
+                                <div class="animate-ping"></div>
+                            </span>
+                        </div>
+                        <div class="popup-body-footer"> <button class="popup-body-footer-button">See all
+                                schedules</button>
+                        </div>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4">

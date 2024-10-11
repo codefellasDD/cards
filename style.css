@@ -22,6 +22,7 @@
   --black10p: rgba(0, 0, 0, 0.1);
   --black4p: rgba(0, 0, 0, 0.04);
   --white: rgba(255, 255, 255, 1);
+  --slate50: rgba(248, 250, 252, 1);
   --slate100: rgba(241, 245, 249, 1);
   --slate200: rgba(226, 232, 240, 1);
   --slate300: rgba(203, 213, 225, 1);
@@ -46,6 +47,13 @@
 .antialiased {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.center-vh{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .bg-slate-200 {
@@ -73,6 +81,19 @@
 body {
   display: block;
   margin: 8px;
+}
+
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--roboto-condensed);
+  font-weight: 600;
+  font-size: 40pt;
+  text-transform: uppercase;
+  color: var(--slate400);
+  text-shadow: 0 20px 25px -5px var(--black10p), 0 10px 10px -5px var(--black4p);
+
 }
 
 .grid-cols-2 {
@@ -293,7 +314,7 @@ body {
   height: 70%;
   margin-left: 4px;
   margin-right: 4px;
-  background-color: var(--slate100);
+  background-color: var(--slate50);
 }
 ul.avatar-list {
   position: absolute;
@@ -399,9 +420,9 @@ img {
 .popup-card-body {
   position: relative;
   top: 1.6rem;
-  background-color: var(--white);
+  background-color: var(--slate50);
   border-radius: 1rem;
-  border: 1px solid var(--slate300);
+  border: 1px solid var(--slate200);
   box-shadow: 0 1px 3px 0 var(--black10p), 0 1px 2px -1px var(--black10p);
   width: 100%;
   height: 88%;
@@ -472,4 +493,131 @@ img {
   border: 1px solid var(--slate300);
   box-shadow: 0 20px 25px -5px var(--black10p), 0 10px 10px -5px var(--black4p);
 }
+
+.popup-body-header{
+  position: relative;
+  display: flex;
+  justify-content:space-between;
+  top: 0.8rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  height: 2rem;
+}
+
+.popup-body-header-left {
+  position: relative;
+  display: flex;
+  color: var(--slate400);
+  font-family: var(--font-state);
+  font-weight: 400;
+  font-size: 12pt;
+  text-transform: uppercase;
+  height: 1.2rem;
+}
+
+.popup-body-header-right {
+  position: relative;
+  display: flex;
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-family: var(--font-state);
+  font-weight: 400;
+  font-size: 10pt;
+  text-transform: uppercase;
+  background-color: var(--white);
+  color: var(--slate600);
+  border: 1px solid var(--slate300);
+  box-shadow: 0 1px 3px 0 var(--black10p), 0 1px 2px -1px var(--black10p);
+}
+
+.popup-body-header-right::before {
+  content: "\2b";
+  font-family: "Font Awesome";
+  margin-right: 0.25rem;
+  padding: 2px 4px;
+}
+
+.popup-body-header-right:active {
+  box-shadow: 0 20px 25px -5px var(--black10p), 0 10px 10px -5px var(--black4p);
+}
+
+.popup-body-header-right:hover {
+  cursor: pointer;
+}
+
+.popup-body-footer{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 2rem;
+  width: 100%;
+}
+
+.popup-body-footer-button {
+  position: relative;
+  display: flex;
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-family: var(--font-state);
+  font-weight: 400;
+  font-size: 10pt;
+  text-transform: uppercase;
+  background-color: var(--slate100);
+  color: var(--slate600);
+  border: 1px solid var(--slate300);
+  box-shadow: 0 1px 3px 0 var(--black10p), 0 1px 2px -1px var(--black10p);
+}
+
+.popup-body-footer-button:active {
+  box-shadow: 0 20px 25px -5px var(--black10p), 0 10px 10px -5px var(--black4p);
+}
+
+.popup-body-footer-button:hover {
+  cursor: pointer;
+}
+
+.task {
+  position: relative;
+  top: 1.6rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  height: 100px;
+  background-color: var(--white);
+  border-radius: 1rem;
+  border: 1px solid var(--slate200);
+}
+
+.ping {
+  position: relative;
+  display: inline-flex;
+  --bg-opacity: 1;
+  background-color: rgb(14 165 233 / var(--bg-opacity));
+  height: 10px;
+  width: 10px;
+  border-radius: 9999px;
+}
+
 /* END SCHEDULE POPUP*/
+
+
+/* ANIMATIONS */
+
+.animate-ping {
+  --bg-opacity: 1;
+  background-color: rgb(56 189 248 / var(--bg-opacity));
+  height: 10px;
+  width: 10px;
+  border-radius: 9999px;
+  animation: ping 1s cubic-bezier(0,0,.2,1) infinite;
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+
+/* END ANIMATIONS */
