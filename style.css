@@ -8,7 +8,6 @@
     url("assets/fonts/fa/fa-solid-900.svg#fontawesomesolid") format("svg");
 }
 
-
 :root {
   --list-icon-size: 32px;
   --oswald: "Oswald", sans-serif;
@@ -20,6 +19,28 @@
   --font-state: var(--poppins);
   --font-range: var(--poppins);
   --font-date: var(--poppins);
+  --black10p: rgba(0, 0, 0, 0.1);
+  --black4p: rgba(0, 0, 0, 0.04);
+  --white: rgba(255, 255, 255, 1);
+  --slate100:  rgba(241,245,249,1);
+  --slate200:  rgba(226,232,240,1); 
+  --slate300:  rgba(203,213,225,1);
+  --slate400:  rgba(148,163,184,1);
+  --slate600:  rgba(71,85,105,1);
+  --success100: rgb(39, 195, 34);
+  --success: rgba(39, 195, 34, 1);
+  --success30: rgba(151, 226, 149, 1);
+  --danger100: rgb(213, 51, 51);
+  --danger: rgba(213, 51, 51, 1);
+  --danger30: rgba(218, 93, 81, 1);
+  --info100: rgb(37, 99, 235);
+  --info: rgba(37, 99, 235, 1);
+  --info30: rgba(149, 160, 226, 1);
+  --warning100: rgb(249, 115, 22);
+  --warning: rgba(249, 115, 22, 1);
+  --warning30: rgba(226, 161, 149, 1);
+
+  --offset: -0.4;
 }
 
 .antialiased {
@@ -27,13 +48,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-.bg-gray-200 {
-  background-color: #edf2f7;
+.bg-slate-200 {
+  background-color: var(--slate200);
 }
 
 .bg-slate-100 {
-  background-color: #f1f5f9;
+  background-color: var(--slate100);
 }
 
 *,
@@ -41,7 +61,7 @@
 ::before {
   border-width: 0;
   border-style: solid;
-  border-color: #e2e8f0;
+  border-color: var(--slate200);
 }
 
 *,
@@ -118,36 +138,46 @@ body {
   padding-bottom: 0rem;
   padding-left: 0.25rem;
   padding-right: 0.25rem;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px var(--black10p),
+    0 10px 10px -5px var(--black4p);
   border-radius: 1rem;
 }
 
 .card[data-state="success"] {
-  background: rgb(39, 195, 34);
+  background: var(--success100);
   background: linear-gradient(
     180deg,
-    rgba(39, 195, 34, 1) 0%,
-    rgba(151, 226, 149, 1) 22%,
-    rgba(255, 255, 255, 1) 84%
+    var(--success) 0%,
+    var(--success30) 30%,
+    var(--white) 80%
   );
 }
 .card[data-state="warning"] {
-  background: rgb(195, 111, 34);
+  background:  var(--warning100);
   background: linear-gradient(
     180deg,
-    rgba(195, 111, 34, 1) 0%,
-    rgba(241, 212, 185, 1) 41%,
-    rgba(255, 255, 255, 1) 74%
+    var(--warning) 0%,
+    var(--warning30) 30%,
+    var(--white) 80%
   );
 }
 .card[data-state="danger"] {
-  background: rgb(213, 51, 51);
+  background: var(--danger100);
   background: linear-gradient(
     180deg,
-    rgba(213, 51, 51, 1) 0%,
-    rgba(218, 93, 81, 1) 41%,
-    rgba(255, 255, 255, 1) 74%
+    var(--danger) 0%,
+    var(--danger30) 30%,
+    var(--white) 80%
+  );
+}
+
+.card[data-state="info"] {
+  background: var(--info100);
+  background: linear-gradient(
+    180deg,
+    var(--info) 0%,
+    var(--info30) 30%,
+    var(--white) 80%
   );
 }
 
@@ -156,7 +186,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  color: white;
+  color: var(--white);
   font-family: var(--font-state);
   font-weight: 500;
   text-transform: uppercase;
@@ -167,7 +197,7 @@ body {
 .card-body {
   position: relative;
   top: 0.8rem;
-  background-color: white;
+  background-color: var(--white);
   border-radius: 1rem;
   height: 80%;
   width: 100%;
@@ -177,10 +207,10 @@ body {
   bottom: 0;
   right: 0;
   padding-right: 0.5rem;
-  color: #94a3b8;
+  color: var(--slate400);
   font-family: var(--font-date);
-  font-weight: 500;
-  font-size: 13pt;
+  font-weight: 400;
+  font-size: 11pt;
 }
 
 .date::before {
@@ -194,10 +224,10 @@ body {
   bottom: 0;
   left: 0;
   padding-left: 0.5rem;
-  color: #94a3b8;
+  color: var(--slate400);
   font-family: var(--font-range);
-  font-weight: 500;
-  font-size: 13pt;
+  font-weight: 400;
+  font-size: 11pt;
 }
 
 .range::before {
@@ -212,7 +242,7 @@ body {
   top: 0.4rem;
   left: 0;
   padding-left: 0.5rem;
-  color: #94a3b8;
+  color: var(--slate600);
   font-weight: 600;
   font-size: 13pt;
 }
@@ -222,7 +252,7 @@ body {
   top: 2rem;
   left: 0;
   padding-left: 0.5rem;
-  color: #94a3b8;
+  color: var(--slate400);
   font-weight: 400;
   font-size: 10pt;
 }
@@ -232,19 +262,19 @@ body {
   top: 3rem;
   left: 0;
   padding-left: 0.5rem;
-  color: #94a3b8;
+  color: var(--slate400);
   font-weight: 400;
   font-size: 10pt;
 }
 .card-mini {
   position: relative;
   border-radius: 1rem;
-  border: 1px dashed lightgrey;
+  border: 1px dashed var(--slate300);
   top: 4px;
   height: 70%;
   margin-left: 4px;
   margin-right: 4px;
-  background-color: #f1f5f9;
+  background-color: var(--slate100);
 }
 ul.avatar-list {
   position: absolute;
@@ -265,12 +295,12 @@ ul.avatar-list li a {
 }
 
 ul.avatar-list li + li {
-  margin-left: calc(var(--list-icon-size) * -0.5);
+  margin-left: calc(var(--list-icon-size) * var(--offset));
 }
 
 ul.avatar-list li + li > a > img {
-  box-shadow: 0 6px 9px #f1f1f1;
-  border-left: 3px solid #fff;
+  box-shadow: 0 6px 9px var(--slate100);
+  border-left: 3px solid var(--white);
   width: var(--list-icon-size);
   height: var(--list-icon-size);
   transition: border 0.3s ease-in, box-shadow 0.2s ease-in;
@@ -279,20 +309,20 @@ ul.avatar-list li + li > a > img {
 ul.avatar-list li > a:hover img {
   position: relative;
   z-index: 5;
-  box-shadow: 0 3px 3px #c5c5c5;
+  box-shadow: 0 3px 3px var(--slate300);
 }
 
 ul.avatar-list li span {
   text-align: center;
-  color: #8e8e8e;
+  color: var(--slate400);
   display: table;
   border-radius: 50%;
   width: var(--list-icon-size);
   height: var(--list-icon-size);
   font-size: 17px;
-  background-color: #fff;
-  box-shadow: 0 6px 9px #f1f1f1;
-  border-left: 2px solid #fff;
+  background-color: var(--white);
+  box-shadow: 0 6px 9px var(--slate100);
+  border-left: 2px solid var(--white);
 }
 
 ul.avatar-list li span i {
@@ -324,7 +354,7 @@ object,
 svg,
 video {
   display: block;
-  vertical-align: middle;
+  /* vertical-align: middle; */
 }
 
 img {
