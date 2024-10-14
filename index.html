@@ -17,6 +17,71 @@
             <div>
                 <div class="popup-card gap-1">
                     <div class="popup-card-header">
+                        <div class="popup-card-title-left">Berechnung Minderwert</div>
+                        <div class="popup-card-select-right">
+                            <input type="radio" id="select-calc" name="sel" />
+                            <label class="select-calc" for="select-calc">Berechnung</label>
+
+                            <input type="radio" id="select-preview" name="sel" />
+                            <label class="select-preview" for="select-preview">Vorschau</label>
+
+                            <input type="radio" id="select-settings" name="sel" checked />
+                            <label class="select-settings" for="select-settings">Setup</label>
+                        </div>
+                    </div>
+                    <div class="popup-card-body" data-view="settings">
+                        <ul class="decreasion-types">
+                            <li class="decreasion-types-item">
+                                <div class="item-left">
+                                    MFM
+                                </div>
+                                <button class="item-right" data-val-type="mfm">Entfernen</button>
+                            </li>
+                            <li class="decreasion-types-item">
+                                <div class="item-left">
+                                    BVSK
+                                </div>
+                                <button class="item-right" data-val-type="bvsk">Entfernen</button>
+                            </li>
+                            <li class="decreasion-types-item">
+                                <div class="item-left">
+                                    Dresdner Methode
+                                </div>
+                                <button class="item-right" data-val-type="dd">Entfernen</button>
+                            </li>
+                            <li class="decreasion-types-item">
+                                <div class="item-left">
+                                    Dr. Trömner
+                                </div>
+                                <button class="item-right" data-val-type="troemner">Hinzufügen</button>
+                            </li>
+                            <li class="decreasion-types-item">
+                                <div class="item-left">
+                                    Hamburger Methode
+                                </div>
+                                <button class="item-right" data-val-type="hh">Hinzufügen</button>
+                            </li>
+                            <li class="decreasion-types-item">
+                                <div class="item-left">
+                                    Bremer Methode
+                                </div>
+                                <button class="item-right" data-val-type="hb">Hinzufügen</button>
+                            </li>
+                            <li class="decreasion-types-item">
+                                <div class="item-left">
+                                    Ruhkopf/Sahm
+                                </div>
+                                <button class="item-right" data-val-type="rs">Hinzufügen</button>
+                            </li>
+                        </ul>
+                        <div class="popup-body-footer"> <button class="popup-body-footer-button">Alle
+                                Varianten</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="popup-card gap-1" hidden>
+                    <div class="popup-card-header">
                         <div class="popup-card-title-left">History Work</div>
                         <div class="popup-card-select-right">
                             <!-- <nav> -->
@@ -26,7 +91,7 @@
                             <input type="radio" id="x2" name="x" />
                             <label for="x2">7D</label>
 
-                            <input type="radio" id="x3" name="x" checked />
+                            <input type="radio" id="x3" name="x" />
                             <label for="x3">1M</label>
                             <!-- </nav> -->
                         </div>
